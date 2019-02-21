@@ -35,9 +35,11 @@ class DriverController extends Controller
 
     }
 
-    public function show($id)
+    public function show(Driver $driver) //metodo injection
     {
+      //$driver = Driver::find($id); // metodo con find
 
+      return view("show", compact('driver'));
     }
 
 
