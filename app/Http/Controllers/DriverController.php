@@ -15,7 +15,7 @@ class DriverController extends Controller
     }
     public function create()
     {
-        //
+        return view("create");
     }
 
     public function store(Request $request)
