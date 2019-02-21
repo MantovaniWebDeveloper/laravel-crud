@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Driver;
 
 class IndexController extends Controller
 {
   public function index(){
-    $vivo= "sono un index vivo";
+    $drivers = Driver::all();
 
+    dd($drivers);
 
-    return view("index", compact('vivo'));
+    //return view("index", compact('vivo'));
   }
 }
