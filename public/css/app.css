@@ -10660,3 +10660,27 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #000;
+}
+
+header .wrapImg {
+  height: 100%;
+  line-height: 70px;
+}
+
+header .wrapImg img {
+  height: 40px;
+}
+
+header .wrapText {
+  height: 100%;
+}
+
+header .wrapText h2 {
+  color: #fff;
+  line-height: 70px;
+}
+

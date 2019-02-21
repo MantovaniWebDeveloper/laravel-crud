@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 
 @section('segnapostoContent')
-<p>{{ $vivo }}</p>
+@include('_partials._header')
+<div class="container">
+  <p>{{ $vivo }}</p>
+</div>
 @endsection
