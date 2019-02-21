@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 pt-4 pb-4">
-      <a href="#"><button class="btn btn-primary">Nuovo pilota</button></a></a>
+      <a href="{{ route('drivers.create') }}"><button class="btn btn-primary">Nuovo pilota</button></a></a>
     </div>
   </div>
   <table class="table table-hover">
@@ -25,9 +25,9 @@
         <td>{{ $driver->name}}</td>
         <td>{{ $driver->surname}}</td>
         <td>{{ $driver->team}}</td>
-        <td><a href="#"><button class="btn btn-success">Visualizza</button></a></td>
-        <td><a href="#"><button class="btn btn-warning">Aggiorna</button></a></td>
-        <td><a href="#"><button class="btn btn-danger">Cancella</button></a></td>
+        <td><a href="{{ route('drivers.show', $driver->id) }}"><button class="btn btn-success">Visualizza</button></a></td>
+        <td><a href="{{ route('drivers.update', $driver->id) }}"><button class="btn btn-warning">Aggiorna</button></a></td>
+        <td><a href="{{ route('drivers.destroy', $driver->id) }}"><button class="btn btn-danger">Cancella</button></a></td>
       </tr>
     @endforeach
   </tbody>
