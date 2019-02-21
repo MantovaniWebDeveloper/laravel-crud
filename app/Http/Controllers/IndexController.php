@@ -10,8 +10,6 @@ class IndexController extends Controller
   public function index(){
     $drivers = Driver::all();
 
-    dd($drivers);
-
-    //return view("index", compact('vivo'));
+    return view("index", compact('drivers'));
   }
 }
