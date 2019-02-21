@@ -20,7 +20,18 @@ class DriverController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $driverInfo = $request->all(); //recupero tutti i dati dal form
+
+        $newDriver = new Driver(); //creo l'oggetto driver
+        $newDriver->name = $driverInfo["name"]; // gli passo i valori delle propietà
+        $newDriver->surname = $driverInfo["surname"];
+        $newDriver->team = $driverInfo["team"];
+
+      //  dd($driverInfo);
+
+      $newDriver->save(); //salvo il record
+
+
     }
 
     /**
