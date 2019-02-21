@@ -31,26 +31,16 @@ class DriverController extends Controller
 
       $newDriver->save(); //salvo il record
 
+      return redirect()->route('drivers.index'); //lo spedisco sulla rotta iniziale
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
