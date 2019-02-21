@@ -22,9 +22,9 @@
   <tbody>
     @foreach ($drivers as $key => $driver)
       <tr>
-        <td>{{ $driver["name"]}}</td>
-        <td>{{ $driver["surname"]}}</td>
-        <td>{{ $driver["team"]}}</td>
+        <td>{{ $driver->name}}</td>
+        <td>{{ $driver->surname}}</td>
+        <td>{{ $driver->team}}</td>
         <td><a href="#"><button class="btn btn-success">Visualizza</button></a></td>
         <td><a href="#"><button class="btn btn-warning">Aggiorna</button></a></td>
         <td><a href="#"><button class="btn btn-danger">Cancella</button></a></td>
