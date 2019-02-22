@@ -71,14 +71,15 @@ class DriverController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $driver = Driver::find($id); //trovo il driver in base all id
+
+
+        $driver->delete(); //elimino */
+
+        return redirect()->route('drivers.index'); //lo spedisco sulla rotta iniziale
+
+
     }
 }

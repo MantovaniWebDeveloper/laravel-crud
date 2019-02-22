@@ -27,7 +27,13 @@
         <td>{{ $driver->team}}</td>
         <td><a href="{{ route('drivers.show', $driver->id) }}"><button class="btn btn-success">Visualizza</button></a></td>
         <td><a href="{{ route('drivers.edit', $driver->id) }}"><button class="btn btn-warning">Aggiorna</button></a></td>
-        <td><a href="{{ route('drivers.destroy', $driver->id) }}"><button class="btn btn-danger">Cancella</button></a></td>
+        <td>
+          <form class="" action="{{ route('drivers.destroy', $driver->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <input class="btn btn-danger" type="submit" name="" value="Cancella">
+          </form>
+        </td>
       </tr>
     @endforeach
   </tbody>
