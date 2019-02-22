@@ -12,3 +12,4 @@
 */
 //Route::get('/', 'IndexController@index')->name('home');
 Route::resource('/drivers', 'DriverController');
+Route::get('/drivers/{id}-{name}-{surname}', 'DriverController@show') -> name("pilota-f1");

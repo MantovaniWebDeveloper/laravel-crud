@@ -25,7 +25,7 @@
         <td>{{ $driver->name}}</td>
         <td>{{ $driver->surname}}</td>
         <td>{{ $driver->team}}</td>
-        <td><a href="{{ route('drivers.show', $driver->id) }}"><button class="btn btn-success">Visualizza</button></a></td>
+        <td><a href="{{ route('pilota-f1',[$driver->id,$driver->name,$driver->surname]) }}"><button class="btn btn-success">Visualizza</button></a></td>
         <td><a href="{{ route('drivers.edit', $driver->id) }}"><button class="btn btn-warning">Aggiorna</button></a></td>
         <td>
           <form class="" action="{{ route('drivers.destroy', $driver->id) }}" method="post">
