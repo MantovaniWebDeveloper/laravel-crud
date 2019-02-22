@@ -22,14 +22,20 @@ class DriverController extends Controller
     {
         $driverInfo = $request->all(); //recupero tutti i dati dal form
 
+        /*USANDO FILL*/
         $newDriver = new Driver(); //creo l'oggetto driver
-        $newDriver->name = $driverInfo["name"]; // gli passo i valori delle propietà
+        $newDriver->fill($driverInfo);
+        $newDriver->save(); //salvo il record
+        /****************/
+
+        /*USANDO METODO CLASSICO*/
+      /* $newDriver->name = $driverInfo["name"]; // gli passo i valori delle propietà
         $newDriver->surname = $driverInfo["surname"];
-        $newDriver->team = $driverInfo["team"];
+        $newDriver->team = $driverInfo["team"];*/
+        /****************/
 
       //  dd($driverInfo);
 
-      $newDriver->save(); //salvo il record
 
       return redirect()->route('drivers.index'); //lo spedisco sulla rotta iniziale
 
@@ -42,22 +48,27 @@ class DriverController extends Controller
       return view("show", compact('driver'));
     }
 
-
-    public function edit($id)
+    public function edit(Driver $driver)
     {
-        //
+      //$driver = Driver::find($id); // metodo con find
+
+      //recupero la vista del form edit
+      return view("edit", compact('driver'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //qui eseguo il vero e proprio aggiornamento che parte dal form edit
     public function update(Request $request, $id)
     {
-        //
+      $driver = Driver::find($id); //trovo il driver in base all id
+
+      $dati = $request->all(); // recupero tutti i dati!
+
+      $driver->update($dati); //aggiorno */
+
+      //dd($driver);
+
+      return redirect()->route('drivers.index'); //lo spedisco sulla rotta iniziale
+
     }
 
     /**
