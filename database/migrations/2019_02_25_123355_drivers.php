@@ -17,9 +17,9 @@ class Drivers extends Migration
         Schema::create('drivers', function(Blueprint $table) {
             //qui gli passo i campi della tabella, con tipo e valori di default (se servono)
             $table->increments('id');
-            $table->string('name');
-            $table->string('surname');
-            $table->string('team');
+            $table->string('name',15);
+            $table->string('surname', 20);
+            $table->string('team', 20);
 
         }
 
@@ -33,7 +33,7 @@ class Drivers extends Migration
      */
     public function down()
     {
-        //qui cancello la tabella 
+        //qui cancello la tabella
         Schema::drop('drivers');
     }
 }
