@@ -13,7 +13,17 @@ class Drivers extends Migration
      */
     public function up()
     {
-        //
+        //con il metodo create creo la tabella
+        Schema::create('drivers', function(Blueprint $table) {
+            //qui gli passo i campi della tabella, con tipo e valori di default (se servono)
+            $table->increments('id');
+            $table->string('name');
+            $table->string('surname');
+            $table->string('team');
+
+        }
+
+      );
     }
 
     /**
@@ -23,6 +33,7 @@ class Drivers extends Migration
      */
     public function down()
     {
-        //
+        //qui cancello la tabella 
+        Schema::drop('drivers');
     }
 }
