@@ -20,7 +20,18 @@ class DriverController extends Controller
 
     public function store(Request $request)
     {
+
+
+
         $driverInfo = $request->all(); //recupero tutti i dati dal form
+
+        $validazioneDati = $request->validate([
+
+          'name' => 'required|min:3',
+          'surname' => 'required|min:3',
+          'team' => 'required|min:3',
+
+        ]);
 
         /*USANDO FILL*/
         $newDriver = new Driver(); //creo l'oggetto driver
